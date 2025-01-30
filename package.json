@@ -1,0 +1,26 @@
+{
+  "name": "js-source",
+  "version": "1.0.0",
+  "description": "about code",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pavel-pj/js3.git"
+  },
+  "keywords": [
+    "code"
+  ],
+  "author": "Pavel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pavel-pj/js3/issues"
+  },
+  "homepage": "https://github.com/pavel-pj/js3#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
