@@ -1,34 +1,26 @@
-import { getTypes } from './src/async-11.js';
-import fsPromises from 'fs/promises';
+import { getDirectorySize } from './src/async-12.js';
+import fsp from 'fs/promises';
+import _ from 'lodash';
+
+const v = [ 739, 610, 176, 0 ];
+
+//console.log(_.sumBy(v))
 
 
-getTypes(['/etc', '/etc/hosts', '/undefined']).then(console.log);
+ getDirectorySize('src')
+
+
+     .then(console.log);
 
 /*
-const files = ['file.js','package.json' , 'src' , 'er'  ];
+const d = ['src/async-7.js','src/async-11.js','src/folder']
 
-const initPromise = Promise.resolve([]);
+const promises = d.map((item)=>{
+    return fsp.stat(item).then((file) =>{
+        return file.isDirectory() ? 0 : file.size ;
+    });
+})
 
-
-const promise = files.reduce( (acc,path) =>{
-   
-   const newAcc = acc.then((contents) => {
-        return fsPromises.stat(path)
-            .then((res) =>  {
-                const type = () =>  {
-                   return res.isDirectory() ?  'Direcotry' : 'File' ;
-                }
-                return  contents.concat(type())
-                  })
-            .catch(e =>{
-                return contents.concat(null)
-            })
-
-    })
-    return newAcc
-
-}, initPromise).then( console.log )
+const promise = Promise.all(promises);
+promise.then(console.log)
 */
-
-
-
