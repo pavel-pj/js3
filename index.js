@@ -1,30 +1,31 @@
 import fsp from 'fs/promises';
 import _ from 'lodash';
-import getChildren from './src/func-10.js';
+import getGirlFriends from './src/func-11.js';
 
 const users = [
     {
         name: 'Tirion',
-        children: [
-            { name: 'Mira', birthday: '1983-03-23' },
+        friends: [
+            { name: 'Mira', gender: 'female' },
+            { name: 'Ramsey', gender: 'male' },
         ],
     },
-    { name: 'Bronn', children: [] },
+    { name: 'Bronn', friends: [] },
     {
         name: 'Sam',
-        children: [
-            { name: 'Aria', birthday: '2012-11-03' },
-            { name: 'Keit', birthday: '1933-05-14' },
+        friends: [
+            { name: 'Aria', gender: 'female' },
+            { name: 'Keit', gender: 'female' },
         ],
     },
     {
         name: 'Rob',
-        children: [
-            { name: 'Tisha', birthday: '2012-11-03' },
+        friends: [
+            { name: 'Taywin', gender: 'male' },
         ],
     },
 ];
 
-console.log(getChildren(users));
+console.log(getGirlFriends(users));
 
 
