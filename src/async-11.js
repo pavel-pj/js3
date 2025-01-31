@@ -3,6 +3,7 @@ export const getTypes = (files) => {
 
     const initPromise = Promise.resolve([]);
 
+    
     const promise = files.reduce((acc, path) => {
         const newAcc = acc.then((contents) => {
             return fsPromises.stat(path)
