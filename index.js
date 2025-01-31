@@ -1,17 +1,30 @@
-import { takeOldest  } from './src/func-9.js';
 import fsp from 'fs/promises';
 import _ from 'lodash';
+import getChildren from './src/func-10.js';
 
 const users = [
-    { name: 'Tirion', birthday: 'Nov 19, 1988' },
-    { name: 'Sam', birthday: 'Nov 22, 1999' },
-    { name: 'Rob', birthday: 'Jan 11, 1975' },
-    { name: 'Sansa', birthday: 'Mar 20, 2001' },
-    { name: 'Tisha', birthday: 'Feb 27, 1992' },
-    { name: 'Chris', birthday: 'Dec 25, 1995' },
+    {
+        name: 'Tirion',
+        children: [
+            { name: 'Mira', birthday: '1983-03-23' },
+        ],
+    },
+    { name: 'Bronn', children: [] },
+    {
+        name: 'Sam',
+        children: [
+            { name: 'Aria', birthday: '2012-11-03' },
+            { name: 'Keit', birthday: '1933-05-14' },
+        ],
+    },
+    {
+        name: 'Rob',
+        children: [
+            { name: 'Tisha', birthday: '2012-11-03' },
+        ],
+    },
 ];
 
+console.log(getChildren(users));
 
-
-console.log(takeOldest(users));
 
