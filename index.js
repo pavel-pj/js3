@@ -1,31 +1,28 @@
 import fsp from 'fs/promises';
 import _ from 'lodash';
-import getGirlFriends from './src/func-11.js';
+import getFreeDomainsCount from './src/func-13.js';
 
-const users = [
-    {
-        name: 'Tirion',
-        friends: [
-            { name: 'Mira', gender: 'female' },
-            { name: 'Ramsey', gender: 'male' },
-        ],
-    },
-    { name: 'Bronn', friends: [] },
-    {
-        name: 'Sam',
-        friends: [
-            { name: 'Aria', gender: 'female' },
-            { name: 'Keit', gender: 'female' },
-        ],
-    },
-    {
-        name: 'Rob',
-        friends: [
-            { name: 'Taywin', gender: 'male' },
-        ],
-    },
+const emails = [
+    'info@gmail.com',
+    'info@yandex.ru',
+    'info@hotmail.com',
+    'mk@host.com',
+    'support@hexlet.io',
+    'key@yandex.ru',
+    'sergey@gmail.com',
+    'vovan@gmail.com',
+    'vovan@hotmail.com',
 ];
 
-console.log(getGirlFriends(users));
+ console.log(getFreeDomainsCount(emails));
 
+const obj = {name:'fsf'}
+obj.value  = 'MMA'
+//console.log(_.get(obj, ['value3']))
+//console.log(Object.hasOwn(obj,'value'))
 
+// {
+//   'gmail.com': 3,
+//   'yandex.ru': 2,
+//   'hotmail.com': 2,
+// };
