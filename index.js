@@ -1,25 +1,15 @@
 import fsp from 'fs/promises';
 import _ from 'lodash';
-import get from './src/obj-9.js';
+import {makeRectangle,getStartPoint,getWidth ,getHeight,containsOrigin} from './src/abstractions/les-6.js';
 
-const data = {
-    user: 'ubuntu',
-    hosts: {
+import  {makeDecartPoint, getX, getY } from './src/abstractions/points.js';
 
-        0: {
-            name: 'web1',
-        },
-        "1": {
-            name: 'web2',
-            null: 3,
-            active: false,
-        },
-    },
-};
+const p = makeDecartPoint(0, 1);
+const rectangle = makeRectangle(p, 4, 5);
 
 
-// console.log( typeof(data.hosts[1].name))
+//console.log(containsOrigin(rectangle)); // false
+//getWidth(rectangle); // 4
 
- console.log(get(data, ['user', 'ubuntu'])); //web2
-
-//console.log(get(data, ['user']); // 'ubuntu');
+const rectangle2 = makeRectangle(makeDecartPoint(-4, 3), 5, 4);
+console.log(containsOrigin(rectangle2)); // true
