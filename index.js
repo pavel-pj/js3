@@ -1,8 +1,9 @@
 import fsp from 'fs/promises';
 import _ from 'lodash';
 
-import PasswordValidator from './src/ood/PasswordValidator.js';
+import Truncater from './src/ood/Truncater.js';
 
-const validator = new PasswordValidator({ containNumbers: true }   );
+const t = new Truncater( );
+console.log(t.truncate('one two',{}))
 
-console.log( validator.validate("ooop"))
+//console.log(t.truncate('aaa ooofgrg',{length:2 , separator:'***'} ))

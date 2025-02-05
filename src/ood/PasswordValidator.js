@@ -1,37 +1,34 @@
 class PasswordValidator {
 
-    constructor ( obj = {} ) {
+    constructor ( options = {} ) {
 
-    if (!Object.hasOwn(obj,'containNumbers')) {
-        this.containNumbers = true
-    } else {
-        this.containNumbers = obj.containNumbers
-    }
+        const defaultOptions ={
+            minlength : 8,
+            containNumbers : true
+        }
 
-    if (!Object.hasOwn(obj,'minLength')) {
-        this.minLength = 8
-    } else {
-        this.minLength = obj.minLength
-    }
+        this.options = {...defaultOptions, ...options}
 
-    this.errors = {};
 
     }
 
     validate ( password) {
-        this.errors = {}
-        if( this.containNumbers === true ) {
+        //return this.options
+
+         const errors = {}
+        if( this.options.containNumbers === true ) {
+            console.log('asdf')
             if (!hasNumber(password)) {
-                this.errors.containNumbers = 'should contain at least one number';
+                 errors.containNumbers = 'should contain at least one number';
             }
         }
 
-        if(password.length < this.minLength) {
-            this.errors.minLength = 'too small';
+        if(password.length < this.options.minlength) {
+             errors.minLength = 'too small';
 
         }
 
-         return this.errors ;
+         return  errors ;
 
     }
 
