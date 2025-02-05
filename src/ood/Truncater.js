@@ -6,12 +6,16 @@ class Truncater {
     };
 
     constructor (options = {}) {
-         options.length ? this.constructor.defaultOptions.length = options.length : '';
-         options.separator ?  this.constructor.defaultOptions.separator = options.separator : '';
+        // options.length ? this.constructor.defaultOptions.length = options.length : '';
+       //  options.separator ?  this.constructor.defaultOptions.separator = options.separator : '';
+
+        this.options = { ...this.constructor.defaultOptions, ... options}
+
     }
 
     truncate (text, options = {}) {
 
+        return this.options;
         const currentOptions = {}
 
         options.length
