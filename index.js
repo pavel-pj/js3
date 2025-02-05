@@ -1,15 +1,15 @@
 import fsp from 'fs/promises';
 import _ from 'lodash';
 
-import Url from './src/ood/Url.js';
+import normalize from './src/ood/normalize.js';
 
-const t = new Url('http://yandex.ru:80?key=value&key2=value2' );
-console.log(t.getScheme())
+const raw = [
+    { name: 'istanbul', country: 'turkey' },
+    { name: 'Moscow ', country: ' Russia' },
+    { name: 'iStanbul', country: 'tUrkey' },
+    { name: 'antalia', country: 'turkeY ' },
+    { name: 'samarA', country: '  ruSsiA' },
+    { name: 'Miami', country: 'usa' },
+];
 
-console.log(t.equals(new Url('http://yandex.ru:80?key=value&key2=value2')));
-
-//const p = new URL('http://yandex.ru:80?key=value&key2=value2');
-//console.log(p)
-
-
-//console.log(t.truncate('aaa ooofgrg',{length:2 , separator:'***'} ))
+ console.log(normalize(raw));
