@@ -22,5 +22,4 @@ export const getMutualFriends = (user1,user2) =>
 
     return result;
 
-
 }
