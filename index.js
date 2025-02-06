@@ -1,15 +1,32 @@
 import fsp from 'fs/promises';
 import _ from 'lodash';
+import {string,object,number} from 'yup';
 
-import normalize from './src/ood/normalize.js';
+ import  getInvalidBooks from './src/ood/getInvalidBooks.js';
 
-const raw = [
-    { name: 'istanbul', country: 'turkey' },
-    { name: 'Moscow ', country: ' Russia' },
-    { name: 'iStanbul', country: 'tUrkey' },
-    { name: 'antalia', country: 'turkeY ' },
-    { name: 'samarA', country: '  ruSsiA' },
-    { name: 'Miami', country: 'usa' },
+
+const books = [
+ { name: 'book', author: 'author' },
+ { author: 'author 2' },
 ];
 
- console.log(normalize(raw));
+const book = { name: 'book', author: '41234',pagesCount:1, link:'https://ya.ru',genre:'classic3' };
+
+const invalidBooks = getInvalidBooks(books); // [{ author: 'author 2' }]
+console.log(invalidBooks)
+
+
+//const schema = yup.string().required('Пусто!');
+//console.log(schema.isValidSync('123455') )
+//let schema =  mixed().oneOf(['jimmy', 42]);
+//console.log(schema.isValidSync(42) )
+/*
+let u =  object({
+  name:  string().required(),
+  age:  number().required().positive().integer(),
+  url : string().required()
+});
+
+console.log(u.isValidSync({name:"fsfsf",age:24,ff: "fsef"}))
+&/
+ */

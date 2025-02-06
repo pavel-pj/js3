@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/pavel-pj/js3#readme",
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "yup": "^1.6.1"
   }
 }

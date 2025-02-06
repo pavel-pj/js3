@@ -28,9 +28,7 @@ export function normalize (countries) {
          return acc;
 
     }, {})
-
-
-
+ 
     return norm;
 
 
