@@ -21,7 +21,9 @@
   },
   "homepage": "https://github.com/pavel-pj/js3#readme",
   "dependencies": {
+    "@hexlet/immutable-fs-trees": "^0.7.2",
     "lodash": "^4.17.21",
+    "typescript": "^5.7.3",
     "yup": "^1.6.1"
   }
 }
