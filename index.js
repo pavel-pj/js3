@@ -1,15 +1,17 @@
-import { downcaseFileNames} from './src/tree/rec1.js'
+import { countFiles} from './src/tree/les3.js'
 import _ from 'lodash'
 import * as fsTrees from '@hexlet/immutable-fs-trees';
 
 const tree = fsTrees.mkdir('/', [
-    fsTrees.mkdir('eTc', [
-        fsTrees.mkdir('NgiNx'),
-        fsTrees.mkdir('CONSUL', [
-            fsTrees.mkfile('config.json'),
-        ]),
+    fsTrees.mkdir('etc', [
+        fsTrees.mkfile('bashrc'),
+        fsTrees.mkfile('consul.cfg'),
     ]),
-    fsTrees.mkfile('hOsts'),
+    fsTrees.mkfile('hexletrc'),
+    fsTrees.mkdir('bin', [
+        fsTrees.mkfile('ls'),
+        fsTrees.mkfile('cat'),
+    ]),
 ]);
 //console.log(tree)
-console.log(JSON.stringify(downcaseFileNames(tree)))
+console.log(countFiles(tree))
