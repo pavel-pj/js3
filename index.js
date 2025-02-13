@@ -1,4 +1,4 @@
-import { getAgregate,getFilesCount} from './src/tree/less4.js'
+import { du,countFiles} from './src/tree/sizes.js'
 import _ from 'lodash'
 import * as fsTrees from '@hexlet/immutable-fs-trees';
 
@@ -6,17 +6,18 @@ const tree = fsTrees.mkdir('/', [
     fsTrees.mkdir('etc', [
         fsTrees.mkdir('apache'),
         fsTrees.mkdir('nginx', [
-            fsTrees.mkfile('nginx.conf'),
+            fsTrees.mkfile('nginx.conf', { size: 800 }),
+        ]),
+        fsTrees.mkdir('consul', [
+            fsTrees.mkfile('config.json', { size: 1200 }),
+            fsTrees.mkfile('data', { size: 8200 }),
+            fsTrees.mkfile('raft', { size: 80 }),
         ]),
     ]),
-    fsTrees.mkdir('consul', [
-        fsTrees.mkfile('config.json'),
-        fsTrees.mkfile('file.tmp'),
-        fsTrees.mkdir('data'),
-    ]),
-    fsTrees.mkfile('hosts'),
-    fsTrees.mkfile('resolve'),
+    fsTrees.mkfile('hosts', { size: 3500 }),
+    fsTrees.mkfile('resolve', { size: 1000 }),
 ]);
-//console.log(tree)
-console.log(getAgregate(tree))
+
+
+console.log(du(    fsTrees.getChildren(tree)[0]         )    )  
 
