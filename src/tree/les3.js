@@ -19,4 +19,4 @@ function getHiddenFilesCount (tree) {
 
 }
 
-export {getHiddenFilesCount,getNodesCount }
+export {getHiddenFilesCount  }
