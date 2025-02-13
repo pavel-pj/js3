@@ -1,17 +1,22 @@
 import _ from 'lodash'
 import * as fsTrees from '@hexlet/immutable-fs-trees';
-const countFiles = (tree) =>{
+function getHiddenFilesCount (tree) {
+
+    const name = fsTrees.getName(tree);
 
     if(fsTrees.isFile(tree)){
-        return 1;
+         if (name.slice(0,1)=='.'){
+
+            return 1;
+         }
+         return 0;
     }
+    const children = fsTrees.getChildren(tree);
 
-    const childs = fsTrees.getChildren(tree);
-    const total=childs.map((item)=>countFiles(item))
-    
-    return _.sum(total);
+    const childs =children.map((item)=> getHiddenFilesCount(item) )
 
+    return _.sum(childs)
 
 }
 
-export {countFiles}
+export {getHiddenFilesCount,getNodesCount }
