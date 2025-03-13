@@ -1,11 +1,8 @@
 import * as fsTrees from '@hexlet/immutable-fs-trees';
 import { findFilesByName } from './src/tree/finder.js';
-import  set from './src/tst/set.js';
+import  get from './src/tst/get.js';
 
-const obj  = {};
-set (obj,"name","Игорь");
 
-console.log(obj);
+const val = get({name:"Игорян"}, "name" , "Ошибка");
+console.log(val);
 
-set (obj,"name","Вася");
-console.log(obj);
