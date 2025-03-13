@@ -1,12 +1,5 @@
 import _ from 'lodash';
 
-export const getChildren =(users) =>
-{
-    return users.map((user)=>{
+export const getChildren = (users) => users.map((user) => user.children).flat();
 
-            return user.children
-    }).flat();
-
-}
-
-export default getChildren
+export default getChildren;

@@ -1,3 +1,1 @@
-export default (r) => {
-    return 4*r;
-};
+export default (r) => 4 * r;

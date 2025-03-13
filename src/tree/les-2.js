@@ -1,28 +1,25 @@
 import * as fsTrees from '@hexlet/immutable-fs-trees';
 
-
 const makeTree = () => {
+  const tree = fsTrees.mkdir('nodejs-package', [
+    fsTrees.mkfile('Makefile'),
+    fsTrees.mkfile('README.md'),
+    fsTrees.mkdir('dist', []),
+    fsTrees.mkdir('test', [
+      fsTrees.mkfile('half.test.js', { type: 'text/javascript' }),
+    ]),
+    fsTrees.mkfile('babel.config.js', { type: 'text/javascript' }),
+    fsTrees.mkdir('node_modules', [
+    ], { owner: 'root', hidden: false }),
+    fsTrees.mkdir('@babel', [
+      fsTrees.mkdir('cli', [
+        fsTrees.mkfile('LICENSE'),
+      ]),
+    ]),
+  ], { hidden: true });
 
-    const tree = fsTrees.mkdir('nodejs-package', [
-        fsTrees.mkfile('Makefile'),
-        fsTrees.mkfile('README.md'),
-        fsTrees.mkdir('dist', []),
-        fsTrees.mkdir('test', [
-            fsTrees.mkfile('half.test.js',{ type: 'text/javascript' }),
-        ]),
-        fsTrees.mkfile('babel.config.js',{ type: 'text/javascript' }),
-        fsTrees.mkdir('node_modules', [
-        ],{ owner: 'root', hidden: false }),
-        fsTrees.mkdir('@babel', [
-            fsTrees.mkdir('cli', [
-                fsTrees.mkfile('LICENSE' ),
-            ])
-        ]),
-    ],{ hidden: true });
-
-    return tree
-
-}
+  return tree;
+};
 
 /*
 nodejs-package # директория (метаданные: { hidden: true })
@@ -38,5 +35,4 @@ nodejs-package # директория (метаданные: { hidden: true })
             └── LICENSE # файл
 */
 
-
-export {makeTree}
+export { makeTree };

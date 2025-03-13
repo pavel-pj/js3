@@ -1,4 +1,4 @@
-export function parseJson (txt) {
+export function parseJson(txt) {
 
 }
 

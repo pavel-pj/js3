@@ -1,12 +1,10 @@
- function Maker (txt) {
-
-    this.name = txt;
-
- }
+function Maker(txt) {
+  this.name = txt;
+}
 /*
 Maker.prototype.toString = function toString() {
     return this.name;
  }
 */
 
- export default Maker;
+export default Maker;

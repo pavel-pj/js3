@@ -1,14 +1,3 @@
- const removeFirstLevel = (tree) =>
-{
-  
+const removeFirstLevel = (tree) => tree.filter((item) => Array.isArray(item)).flat();
 
-    return tree.filter((item)=>{
-
-        return Array.isArray(item)
-
-    }).flat();
-
-
-}
-
-export {removeFirstLevel} ;
+export { removeFirstLevel };

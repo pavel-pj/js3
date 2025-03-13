@@ -1,10 +1,9 @@
 import fsp from 'fs/promises';
 
-export const touch = () =>
-{
-    console.log("Hello");
-}
+export const touch = () => {
+  console.log('Hello');
+};
 
-export default touch
+export default touch;
 
-//touch('/myfile').then(() => console.log('created!'));
+// touch('/myfile').then(() => console.log('created!'));

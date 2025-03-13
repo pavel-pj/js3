@@ -1,23 +1,11 @@
-import { acc} from './src/tree/les-6.js'
-import _ from 'lodash'
 import * as fsTrees from '@hexlet/immutable-fs-trees';
+import { findFilesByName } from './src/tree/finder.js';
+import  set from './src/tst/set.js';
 
-const tree = fsTrees.mkdir('/', [
-    fsTrees.mkdir('etc', [
-        fsTrees.mkdir('apache'),
-        fsTrees.mkdir('nginx', [
-            fsTrees.mkfile('nginx.conf'),
-        ]),
-        fsTrees.mkdir('consul', [
-            fsTrees.mkfile('config.json'),
-            fsTrees.mkdir('data'),
-        ]),
-    ]),
-    fsTrees.mkdir('logs'),
-    fsTrees.mkfile('hosts'),
-]);
+const obj  = {};
+set (obj,"name","Игорь");
 
-console.log(acc(tree,2));
+console.log(obj);
 
-
-
+set (obj,"name","Вася");
+console.log(obj);

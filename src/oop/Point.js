@@ -1,18 +1,15 @@
-
-function getX(){
-    return this.x;
+function getX() {
+  return this.x;
 }
 
-function getY(){
-    return this.y
+function getY() {
+  return this.y;
 }
 
-function Point (x,y) {
-
-    this.x = x;
-    this.y = y;
-    this.getX = getX;
-    this.getY = getY;
-
+function Point(x, y) {
+  this.x = x;
+  this.y = y;
+  this.getX = getX;
+  this.getY = getY;
 }
-export {Point,getX,getY}
+export { Point, getX, getY };
