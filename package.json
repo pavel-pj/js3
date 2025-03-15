@@ -4,7 +4,8 @@
   "description": "about code",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+
+    "test": "jest"
   },
   "type": "module",
   "repository": {

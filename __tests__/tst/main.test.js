@@ -1,6 +1,6 @@
 import reverse from '../../src/tst/main.js';
 
-test('reverse444', () => {
-    expect(reverse('hello4')).toEqual('olleh');
+test('myTest', () => {
+    expect(reverse('hello')).toEqual('olleh');
     expect(reverse('')).toEqual('');
 });
